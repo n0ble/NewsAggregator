@@ -176,6 +176,9 @@
     <Compile Include="Controllers\ResourceController.cs" />
     <Compile Include="DAL\AppContext.cs" />
     <Compile Include="DAL\AppInitializer.cs" />
+    <Compile Include="DAL\EFNewsRepository.cs" />
+    <Compile Include="DAL\INewsRepository.cs" />
+    <Compile Include="DAL\NewsFinder.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -261,6 +264,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="BLL\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
