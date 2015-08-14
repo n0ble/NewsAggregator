@@ -40,3 +40,6 @@ D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator.Tests\obj\Debug\Ne
 D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator.Tests\obj\Debug\NewsAggregator.Tests.pdb
 D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator.Tests\bin\Debug\Microsoft.Practices.Unity.dll
 D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator.Tests\bin\Debug\Microsoft.Practices.Unity.xml
+D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator.Tests\bin\Debug\HtmlAgilityPack.dll
+D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator.Tests\bin\Debug\HtmlAgilityPack.pdb
+D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator.Tests\bin\Debug\HtmlAgilityPack.xml

@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
+﻿using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
-using System.Web;
 using System.Web.Mvc;
+using HtmlAgilityPack;
 using NewsAggregator.DAL;
 using NewsAggregator.Models;
+using NewsAggregator.BLL;
 
 namespace NewsAggregator.Controllers
 {
@@ -15,12 +14,16 @@ namespace NewsAggregator.Controllers
 	{
 		//private static INewsRepository newsRepository;
 
-		//private readonly NewsFinder _finder;
+		private readonly NewsFinder _finder;
 
-		//public NewsController(NewsFinder finder)
-		//{
-		//	this._finder = finder;
-		//}
+		public NewsController()
+		{
+		}
+
+		public NewsController(NewsFinder finder)
+		{
+			this._finder = finder;
+		}
 
 		private AppContext db = new AppContext();
 	
@@ -29,6 +32,16 @@ namespace NewsAggregator.Controllers
 		// GET: News
 		public ActionResult Index()
 		{
+			var scraper = new NewsScraper();
+			var resource = new Resource("BBC", "http://www.bbc.com", "Britain");
+			var nodes = scraper.GetNodes(resource);
+			foreach (HtmlNode n in nodes)
+			{
+				var doc = scraper.GetDocument(resource.Link + n.Attributes["href"].Value);
+				var parser = new HAPParser();
+				parser.GetSubject(doc);
+				parser.GetBody(doc);
+			}
 
 			return View(db.Newses.ToList());
 		}
@@ -49,20 +62,20 @@ namespace NewsAggregator.Controllers
         }
 
 		// GET: News/Details/5
-	
-		//public ActionResult Find(string q)
-		//{
-		//	if (q == null)
-		//	{
-		//		return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
-		//	}
-		//	IEnumerable<News> newses = _finder.FindBySubject(q).AsEnumerable();
-		//	if (newses == null)
-		//	{
-		//		return HttpNotFound();
-		//	}
-		//	return View(newses.FirstOrDefault());
-		//}
+
+		public ActionResult Find(string q)
+		{
+			if (q == null)
+			{
+				return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+			}
+			IEnumerable<News> newses = _finder.FindBySubject(q).AsEnumerable();
+			if (newses == null)
+			{
+				return HttpNotFound();
+			}
+			return View(newses.FirstOrDefault());
+		}
 
 		// GET: News/Create
 		public ActionResult Create()

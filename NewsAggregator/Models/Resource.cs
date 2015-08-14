@@ -13,5 +13,13 @@ namespace NewsAggregator.Models
 		public string Tag { get; set; }
 		public DateTime UpdatedOn { get; set; }
 		public virtual ICollection<News> Newses { get; set; }
+
+		public Resource(string name, string link, string tag)
+		{
+			Name = name;
+			Link = link;
+			Tag = tag;
+			UpdatedOn = DateTime.Now;
+		}
 	}
 }

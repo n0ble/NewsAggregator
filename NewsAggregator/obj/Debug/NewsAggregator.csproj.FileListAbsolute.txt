@@ -118,3 +118,6 @@ D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator\obj\Debug\NewsAggr
 D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator\obj\Debug\NewsAggregator.csproj.GenerateResource.Cache
 D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator\obj\Debug\NewsAggregator.dll
 D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator\obj\Debug\NewsAggregator.pdb
+D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator\bin\HtmlAgilityPack.dll
+D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator\bin\HtmlAgilityPack.pdb
+D:\SelfDev\NewsAggregator\Kyril\NewsAggregator\NewsAggregator\bin\HtmlAgilityPack.xml
